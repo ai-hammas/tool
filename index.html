@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Infinytolls - Free Online Image & File Tools</title>
+
+    <meta name="description" content="A free online platform with a variety of tools to enhance, compress, and convert your images and documents. PDF to Word, image background remover, and more.">
+
+    <meta name="keywords" content="image tools, file conversion, pdf to word, image enhancer, image compressor, background remover, jpg to png, image resizer, file merger">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+
+        body {
+
+            font-family: 'Inter', sans-serif;
+
+        }
+
+        .tool-card {
+
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        }
+
+        .tool-card:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+        }
+
+        .nav-link {
+
+            position: relative;
+
+            transition: color 0.3s;
+
+        }
+
+        .nav-link::after {
+
+            content: '';
+
+            position: absolute;
+
+            width: 0;
+
+            height: 2px;
+
+            bottom: -2px;
+
+            left: 50%;
+
+            background-color: #4f46e5;
+
+            transition: all 0.3s ease-out;
+
+            transform: translateX(-50%);
+
+        }
+
+        .nav-link:hover::after {
+
+            width: 100%;
+
+        }
+
+        .hero-bg {
+
+            background-color: #f3f4f6;
+
+            background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+
+            background-size: 20px 20px;
+
+        }
+
+        .cta-button {
+
+            transition: all 0.3s ease;
+
+        }
+
+        .cta-button:hover {
+
+            transform: scale(1.05);
+
+        }
+
+    </style>
+
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+
+
+    <!-- Header -->
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+
+            <a href="#home" class="text-2xl font-bold text-indigo-600">
+
+                <i class="fas fa-infinity mr-2"></i>Infinytolls
+
+            </a>
+
+            <div class="hidden md:flex items-center space-x-6">
+
+                <a href="#tools" class="text-gray-600 hover:text-indigo-600 nav-link">Tools</a>
+
+                <a href="#features" class="text-gray-600 hover:text-indigo-600 nav-link">Features</a>
+
+                <a href="#contact" class="text-gray-600 hover:text-indigo-600 nav-link">Contact</a>
+
+            </div>
+
+            <a href="#tools" class="hidden md:block bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 cta-button">Get Started</a>
+
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-indigo-600">
+
+                <i class="fas fa-bars text-2xl"></i>
+
+            </button>
+
+        </nav>
+
+        <!-- Mobile Menu -->
+
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+
+            <a href="#tools" class="block py-2 text-gray-600 hover:text-indigo-600">Tools</a>
+
+            <a href="#features" class="block py-2 text-gray-600 hover:text-indigo-600">Features</a>
+
+            <a href="#contact" class="block py-2 text-gray-600 hover:text-indigo-600">Contact</a>
+
+            <a href="#tools" class="block mt-2 bg-indigo-600 text-white px-4 py-2 rounded-lg text-center hover:bg-indigo-700 cta-button">Get Started</a>
+
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+        <!-- Hero Section -->
+
+        <section id="home" class="hero-bg py-20 md:py-32">
+
+            <div class="container mx-auto px-6 text-center">
+
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">Your All-in-One Toolkit for Files</h1>
+
+                <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Effortlessly convert, enhance, compress, and edit your images and documents with our suite of powerful, easy-to-use online tools.</p>
+
+                <a href="#tools" class="mt-8 inline-block bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-indigo-700 cta-button">Explore Tools</a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Tools Section -->
+
+        <section id="tools" class="py-20 bg-white">
+
+            <div class="container mx-auto px-6">
+
+                <div class="text-center mb-12">
+
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Our Suite of Tools</h2>
+
+                    <p class="mt-2 text-gray-600">Select a tool to get started.</p>
+
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Tool Cards will be injected here by JS -->
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Tool Interface Section -->
+
+        <section id="tool-interface" class="py-20 bg-gray-50 hidden">
+
+            <div class="container mx-auto px-6">
+
+                 <button id="back-to-tools" class="mb-8 text-indigo-600 hover:text-indigo-800 font-semibold"><i class="fas fa-arrow-left mr-2"></i>Back to All Tools</button>
+
+                <div id="tool-container" class="bg-white p-8 rounded-xl shadow-lg max-w-4xl mx-auto">
+
+                    <!-- Specific tool UI will be loaded here -->
+
+                </div>
+
+            </div>
+
+        </section>
+
+        
+
+        <!-- Features Section -->
+
+        <section id="features" class="py-20 bg-white">
+
+            <div class="container mx-auto px-6">
+
+                <div class="text-center mb-12">
+
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Why Choose Infinytolls?</h2>
+
+                    <p class="mt-2 text-gray-600">Powerful features designed for everyone.</p>
+
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+
+                    <div class="p-6">
+
+                        <div class="text-4xl text-indigo-600 mb-4"><i class="fas fa-bolt"></i></div>
+
+                        <h3 class="text-xl font-semibold mb-2">Lightning Fast</h3>
+
+                        <p class="text-gray-600">Our Python-powered backend processes your files in seconds, not minutes.</p>
+
+                    </div>
+
+                    <div class="p-6">
+
+                        <div class="text-4xl text-indigo-600 mb-4"><i class="fas fa-shield-alt"></i></div>
+
+                        <h3 class="text-xl font-semibold mb-2">Privacy Focused</h3>
+
+                        <p class="text-gray-600">We delete your files from our servers automatically after one hour. Your data is safe.</p>
+
+                    </div>
+
+                    <div class="p-6">
+
+                        <div class="text-4xl text-indigo-600 mb-4"><i class="fas fa-desktop"></i></div>
+
+                        <h3 class="text-xl font-semibold mb-2">No Software Needed</h3>
+
+                        <p class="text-gray-600">Access all our tools directly from your browser on any device. No installation required.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Contact Section -->
+
+        <section id="contact" class="py-20 bg-gray-50">
+
+            <div class="container mx-auto px-6 max-w-2xl text-center">
+
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Have Questions?</h2>
+
+                <p class="mt-2 text-gray-600 mb-8">We'd love to hear from you. Reach out with any feedback or inquiries.</p>
+
+                <a href="mailto:support@infinytolls.com" class="bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-indigo-700 cta-button">Contact Us</a>
+
+            </div>
+
+        </section>
+
+
+
+    </main>
+
+
+
+    <!-- Footer -->
+
+    <footer class="bg-gray-800 text-white py-10">
+
+        <div class="container mx-auto px-6 text-center">
+
+            <p>&copy; 2024 Infinytolls. All Rights Reserved.</p>
+
+            <div class="mt-4 space-x-6">
+
+                <a href="#" class="hover:text-indigo-400">Privacy Policy</a>
+
+                <a href="#" class="hover:text-indigo-400">Terms of Service</a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // Mobile menu toggle
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+
+                mobileMenu.classList.toggle('hidden');
+
+            });
+
+
+
+            const tools = [
+
+                { id: 'pdf-to-word', name: 'PDF to Word', icon: 'fa-file-word', description: 'Convert your PDF files to editable Word documents.' },
+
+                { id: 'image-enhancer', name: 'Image Enhancer', icon: 'fa-magic', description: 'Improve image quality, colors, and sharpness with AI.' },
+
+                { id: 'image-compressor', name: 'Image Compressor', icon: 'fa-compress-arrows-alt', description: 'Reduce the file size of your images without losing quality.' },
+
+                { id: 'background-remover', name: 'Background Remover', icon: 'fa-eraser', description: 'Automatically remove the background from any image.' },
+
+                { id: 'jpg-to-png', name: 'JPG to PNG', icon: 'fa-exchange-alt', description: 'Convert JPG images to PNG format with transparency.' },
+
+                { id: 'png-to-jpg', name: 'PNG to JPG', icon: 'fa-exchange-alt', description: 'Convert PNG images to standard JPG format.' },
+
+                { id: 'image-resizer', name: 'Image Resizer', icon: 'fa-crop-alt', description: 'Resize your images to specific dimensions easily.' },
+
+                { id: 'file-merger', name: 'File Merger', icon: 'fa-object-group', description: 'Combine multiple PDF or DOCX files into a single document.' }
+
+            ];
+
+
+
+            const toolsGrid = document.querySelector('#tools .grid');
+
+            const toolInterfaceSection = document.getElementById('tool-interface');
+
+            const toolContainer = document.getElementById('tool-container');
+
+            const toolsSection = document.getElementById('tools');
+
+            const backToToolsButton = document.getElementById('back-to-tools');
+
+
+
+            // Populate tool cards
+
+            tools.forEach(tool => {
+
+                const card = document.createElement('div');
+
+                card.className = 'tool-card bg-white p-6 rounded-lg shadow-md cursor-pointer';
+
+                card.innerHTML = `
+
+                    <div class="flex items-center">
+
+                        <div class="text-3xl text-indigo-600 mr-4"><i class="fas ${tool.icon}"></i></div>
+
+                        <div>
+
+                            <h3 class="text-xl font-semibold text-gray-900">${tool.name}</h3>
+
+                            <p class="text-gray-600 mt-1">${tool.description}</p>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+                card.addEventListener('click', () => showToolInterface(tool));
+
+                toolsGrid.appendChild(card);
+
+            });
+
+
+
+            function showToolInterface(tool) {
+
+                toolsSection.classList.add('hidden');
+
+                toolInterfaceSection.classList.remove('hidden');
+
+                window.scrollTo(0, toolInterfaceSection.offsetTop - 100);
+
+
+
+                let toolHTML = `
+
+                    <div class="text-center mb-8">
+
+                        <i class="fas ${tool.icon} text-5xl text-indigo-600"></i>
+
+                        <h2 class="text-3xl font-bold mt-4">${tool.name}</h2>
+
+                        <p class="text-gray-600 mt-2">${tool.description}</p>
+
+                    </div>
+
+                    <div id="upload-area" class="border-4 border-dashed border-gray-300 rounded-xl p-10 text-center cursor-pointer hover:border-indigo-500 transition">
+
+                        <input type="file" id="file-input" class="hidden" multiple>
+
+                        <i class="fas fa-cloud-upload-alt text-5xl text-gray-400"></i>
+
+                        <p class="mt-4 text-xl font-semibold">Drag & Drop your files here</p>
+
+                        <p class="text-gray-500">or</p>
+
+                        <button id="browse-btn" class="mt-2 bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700">Browse Files</button>
+
+                    </div>
+
+                    <div id="file-list" class="mt-6"></div>
+
+                `;
+
+
+
+                if (tool.id === 'image-resizer') {
+
+                    toolHTML += `
+
+                        <div id="resize-options" class="mt-6 hidden">
+
+                            <h3 class="font-semibold text-lg mb-2">Resize Options</h3>
+
+                            <div class="flex space-x-4">
+
+                                <input type="number" id="width-input" placeholder="Width (px)" class="w-full p-2 border rounded">
+
+                                <input type="number" id="height-input" placeholder="Height (px)" class="w-full p-2 border rounded">
+
+                            </div>
+
+                             <div class="mt-2">
+
+                                <input type="checkbox" id="aspect-ratio" checked>
+
+                                <label for="aspect-ratio">Maintain aspect ratio</label>
+
+                            </div>
+
+                        </div>
+
+                    `;
+
+                }
+
+
+
+                toolHTML += `<div class="text-center mt-8">
+
+                                <button id="process-btn" class="bg-green-500 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-green-600 hidden">Process Files</button>
+
+                             </div>
+
+                             <div id="result-area" class="mt-8 text-center hidden"></div>
+
+                             `;
+
+
+
+                toolContainer.innerHTML = toolHTML;
+
+
+
+                // Event listeners for the new UI
+
+                const uploadArea = document.getElementById('upload-area');
+
+                const fileInput = document.getElementById('file-input');
+
+                const browseBtn = document.getElementById('browse-btn');
+
+                const fileList = document.getElementById('file-list');
+
+                const processBtn = document.getElementById('process-btn');
+
+                const resizeOptions = document.getElementById('resize-options');
+
+
+
+                browseBtn.addEventListener('click', () => fileInput.click());
+
+                
+
+                ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+
+                    uploadArea.addEventListener(eventName, preventDefaults, false);
+
+                });
+
+                
+
+                function preventDefaults(e) {
+
+                    e.preventDefault();
+
+                    e.stopPropagation();
+
+                }
+
+
+
+                ['dragenter', 'dragover'].forEach(eventName => {
+
+                    uploadArea.addEventListener(eventName, () => uploadArea.classList.add('border-indigo-500'), false);
+
+                });
+
+
+
+                ['dragleave', 'drop'].forEach(eventName => {
+
+                    uploadArea.addEventListener(eventName, () => uploadArea.classList.remove('border-indigo-500'), false);
+
+                });
+
+
+
+                uploadArea.addEventListener('drop', handleDrop, false);
+
+                fileInput.addEventListener('change', handleFileSelect);
+
+
+
+                function handleDrop(e) {
+
+                    let dt = e.dataTransfer;
+
+                    let files = dt.files;
+
+                    handleFiles(files);
+
+                }
+
+
+
+                function handleFileSelect(e) {
+
+                    handleFiles(e.target.files);
+
+                }
+
+
+
+                function handleFiles(files) {
+
+                    fileList.innerHTML = ''; // Clear previous files
+
+                    if (files.length > 0) {
+
+                        for (const file of files) {
+
+                            const fileElement = document.createElement('div');
+
+                            fileElement.className = 'flex justify-between items-center bg-gray-100 p-3 rounded-lg mb-2';
+
+                            fileElement.innerHTML = `
+
+                                <span><i class="fas fa-file-alt mr-2"></i>${file.name}</span>
+
+                                <span>(${(file.size / 1024).toFixed(2)} KB)</span>
+
+                            `;
+
+                            fileList.appendChild(fileElement);
+
+                        }
+
+                        processBtn.classList.remove('hidden');
+
+                        if(resizeOptions) resizeOptions.classList.remove('hidden');
+
+                    }
+
+                }
+
+
+
+                processBtn.addEventListener('click', () => {
+
+                    // This is where you would call the Python backend
+
+                    const resultArea = document.getElementById('result-area');
+
+                    resultArea.classList.remove('hidden');
+
+                    resultArea.innerHTML = `
+
+                        <div class="p-4 bg-blue-100 text-blue-800 rounded-lg">
+
+                            <i class="fas fa-spinner fa-spin mr-2"></i> Processing... This is a demo. In a real application, your file would be processed now.
+
+                        </div>
+
+                        <div class="mt-4">
+
+                            <button class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700">Download Mock File</button>
+
+                        </div>
+
+                    `;
+
+                });
+
+            }
+
+
+
+            backToToolsButton.addEventListener('click', () => {
+
+                toolInterfaceSection.classList.add('hidden');
+
+                toolsSection.classList.remove('hidden');
+
+                window.scrollTo(0, toolsSection.offsetTop - 100);
+
+            });
+
+            
+
+            // Smooth scrolling for anchor links
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+                anchor.addEventListener('click', function (e) {
+
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+
+                        behavior: 'smooth'
+
+                    });
+
+                });
+
+            });
+
+
+
+        });
+
+    </script>
+
+</body>
+
+</html>
